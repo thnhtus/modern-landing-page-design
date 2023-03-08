@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet/less" type="text/css" href="style.less">
+    <title>Landing page</title>
+    <script src="https://cdn.jsdelivr.net/npm/less"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="nav">
+            <div class="nav__container">
+                <div class="nav__logo nav__item">
+                    <a href="#">JBY London</a>
+                </div>
+                <div class="nav__links nav__item">
+                    <a href="#">Photographers</a>
+                    <a href="#">Directors</a>
+                    <a href="#">Clients</a>
+                    <a href="#">About us</a>
+                </div>
+                <div class="nav__cta nav__item">
+                    <a href="#">Connect with us</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="hero__container">
+            <div class="hero">
+                <h1>*The art <br>inspired <br>by your <br>story. </h1>
+            </div>
+            <div class="hero__cta hero__item"><button>Write us a letter</button></div>
+            <p class="hero__item">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
+                has been the
+                industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
+                scrambled it to make a type specimen book</p>
+        </div>
+        <div class="blob blob__1"></div>
+        <div class="blob blob__2"></div>
+        <div class="blob blob__3">+</div>
+    </div>
+
+    <script>
+
+        gsap.from("nav__container", 2, {
+            opacity: 0,
+            y: -60,
+            ease: 'power3.inOut',
+            delay: 0.5,
+        });
+
+        gsap.from(".hero > *", 1, {
+            opacity: 0,
+            y: 60,
+            ease: 'power3.inOut',
+            delay: 1,
+            stagger: {
+                amount: 0.5
+            }
+        });
+
+        gsap.from(".blob", 2, {
+            scale: 0,
+            ease: 'power3.inOut',
+            delay: 1.5,
+            stagger: {
+                amount: 0.5
+            }
+        });
+
+
+
+    </script>
+</body>
+
+</html>

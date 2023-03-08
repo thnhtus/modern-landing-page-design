@@ -1,0 +1,189 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100vh;
+  background: #e9e1c5;
+  overflow: hidden;
+}
+
+.nav {
+  width: 95%;
+  margin: 0 auto;
+  padding: 2em 0;
+  border-bottom: 1px solid #000;
+
+  &__container {
+    width: 100%;
+    position: relative;
+    display: flex;
+    flex-flow: row nowrap;
+  }
+
+  &__item {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &:first-child {
+      margin-right: auto;
+      text-align: left;
+    }
+
+    &:nth-child(2) {
+      flex: 4;
+    }
+
+    &:last-child {
+      margin-left: auto;
+    }
+
+    a {
+      text-decoration: none;
+      color: #000;
+      font-family: "Neue Montreal";
+    }
+  }
+
+  &__logo {
+    a {
+      font-family: "Voyage";
+      font-size: 20px;
+      font-weight: 600;
+    }
+  }
+
+  &__cta {
+    a {
+      text-transform: uppercase;
+      font-size: 14px;
+    }
+  }
+
+  &__links {
+    a {
+      padding: 0 2em;
+      font-size: 14px;
+    }
+  }
+}
+
+@media (max-width: 900px) {
+  .nav {
+    width: 100%;
+
+    &__links,
+    &__cta {
+      display: none;
+    }
+  }
+}
+
+.hero {
+  width: 30%;
+  margin: 0 auto;
+  text-align: center;
+  padding: 4em 0;
+
+  &__container {
+    position: relative;
+    z-index: 10000;
+    width: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+  }
+
+  & > * {
+    position: relative;
+  }
+
+  &__cta {
+    button {
+      background: #000;
+      color: #fff;
+      border: none;
+      outline: none;
+      margin: 4em 0 0 0;
+      padding: 1.6em 3.2em;
+      text-transform: uppercase;
+      font-size: 12px;
+    }
+  }
+
+  &__item {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+h1 {
+  font-family: "Voyage";
+  font-weight: 500;
+  font-size: 5vw;
+}
+
+p {
+  margin: 4em 0 0 0;
+  font-family: "Neue Montreal";
+  font-size: 14px;
+}
+
+.blob {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: animate-blob 4s ease-in-out infinite;
+
+  &__1 {
+    position: absolute;
+    top: 20%;
+    left: 5%;
+    width: 400px;
+    height: 400px;
+    background: url(https://images.unsplash.com/photo-1678221563200-f13d8ace286c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=735&q=80)
+      no-repeat 50% 50%;
+    background-size: cover;
+  }
+  &__2 {
+    position: absolute;
+    top: 50%;
+    right: 10%;
+    width: 160px;
+    height: 160px;
+    background: url(https://images.unsplash.com/photo-1678043638715-df1cb9b98ae8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80)
+      no-repeat 50% 50%;
+    background-size: cover;
+    animation-delay: 1s;
+  }
+  &__3 {
+    position: absolute;
+    top: 20%;
+    right: 25%;
+    width: 100px;
+    height: 100px;
+    border: 1px solid rgba(0, 0, 0, 1);
+    animation-delay: 2s;
+  }
+}
+
+@keyframes animate-blob {
+  0% {
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  }
+
+  50% {
+    border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
+  }
+
+  100% {
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  }
+}
